@@ -1,9 +1,11 @@
 import tkinter as tk
 from tkinter import messagebox
 import os
+import webbrowser
+import subprocess
 
 def show_new_message():
-    os.system(r'"C:\XXXXX\AppData\Local\Programs\Microsoft VS Code\Code.exe"')
+    os.system(r'"C:\mille\AppData\Local\Programs\Microsoft VS Code\Code.exe"')
 
 def show_message():
     os.system(r'"C:\Program Files (x86)\Inno Setup 6\Compil32.exe"')
@@ -18,7 +20,7 @@ def open_writable_box():
 
     def save_text():
         text_content = text_box.get("1.0", tk.END).strip()
-        save_path = r'C:\Users\XXXXX\OneDrive\Desktop\PY notepad saves\saved_text.txt'
+        save_path = r'C:\Users\mille\OneDrive\Desktop\PY notepad saves\saved_text.txt'
         
         try:
             with open(save_path, 'w') as file:
@@ -41,7 +43,7 @@ def open_IPbox_box():
     text_box.pack(pady=10)
     def save_ip():
         text_content = text_box.get("1.0", tk.END).strip()
-        save_path = r'C:\Users\XXXXX\OneDrive\Desktop\Logged IPs\Logged IP.txt'
+        save_path = r'C:\Users\mille\OneDrive\Desktop\Logged IPs\Logged IP.txt'
       
         try:
             with open(save_path, 'w') as file:
@@ -81,16 +83,75 @@ def main():
     def close_program():
         root.quit()
 
+    def duplicate_main_window():
+     duplicate_window = tk.Toplevel()
+     duplicate_window.title("Duplicate Main Window")
+     duplicate_window.geometry("300x600")
+
+     long_text = (
+        "Welcome to the Duplicate Main window of the Python Windows Client!  "
+        "Various programs with various uses can be found on the Client launcher. "
+        "Click [End Session] to close the launcher."
+        "Right shift to hide. Re-open from taskbar."
+     )
     
-        
+     label = tk.Label(duplicate_window, text=long_text, wraplength=300)
+     label.pack(pady=10)
 
+     def close_duplicate():
+        duplicate_window.destroy()
 
+     tk.Button(duplicate_window, text="Run Inno setup", command=show_message).pack(pady=5)
+     tk.Button(duplicate_window, text="Run MS visual studio", command=show_new_message).pack(pady=5)
+     tk.Button(duplicate_window, text="Open PY notepad", command=open_writable_box).pack(pady=5)
+     tk.Button(duplicate_window, text="IP Logger", command=open_IPbox_box).pack(pady=5)
+     tk.Button(duplicate_window, text="End Duplicate Session", command=close_duplicate).pack(pady=5)
+
+    def open_website1():
+     url = "https://Github.com/eaDC22mn"
+     # This will use the default browser, but you can specify Edge like this:
+     edge_path = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+     webbrowser.register('edge', None, webbrowser.BackgroundBrowser(edge_path))
+     webbrowser.get('edge').open(url)
+
+    def open_website2():
+     url = "https://grabify.link"
+     # This will use the default browser, but you can specify Edge like this:
+     edge_path = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+     webbrowser.register('edge', None, webbrowser.BackgroundBrowser(edge_path))
+     webbrowser.get('edge').open(url)
+
+    def open_website3():
+     url = "https://chatgpt.com"
+     # This will use the default browser, but you can specify Edge like this:
+     edge_path = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+     webbrowser.register('edge', None, webbrowser.BackgroundBrowser(edge_path))
+     webbrowser.get('edge').open(url)
+
+    def open_website4():
+     url = "https://scamwebsite.com"
+     # This will use the default browser, but you can specify Edge like this:
+     edge_path = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+     webbrowser.register('edge', None, webbrowser.BackgroundBrowser(edge_path))
+     webbrowser.get('edge').open(url)
+
+    def toggle_window(event=None):
+        if root.state() == 'normal':
+            root.iconify()
+        else:
+            root.deiconify()
+
+    root.bind('<Shift_R>', toggle_window)
+
+    tk.Button(root, text="Open github (eaDC22mn)", command=open_website1).pack(pady=4)
+    tk.Button(root, text="Open Grabify", command=open_website2).pack(pady=4)
+    tk.Button(root, text="Open Chat GPT", command=open_website3).pack(pady=4)
+    tk.Button(root, text="Open scamwebsite.com Website", command=open_website4).pack(pady=4)
     tk.Button(root, text="Run Inno setup", command=show_message).pack(pady=5)
     tk.Button(root, text="Run MS visual studio", command=show_new_message).pack(pady=5)
     tk.Button(root, text="Open PY notepad", command=open_writable_box).pack(pady=5)
-    tk.Button(root, text="IP Logger", command=open_IPbox_box).pack(pady=5)
-   
-
+    tk.Button(root, text="IP Logger", command=open_IPbox_box).pack(pady=5)     
+    tk.Button(root, text="Open Second Window", command=duplicate_main_window).pack(pady=5)
 
 
     def open_second_window():
@@ -112,8 +173,9 @@ def main():
             second_window.destroy()
 
         def Run_spotify():
-            os.system(r'"C:\Users\XXXXX\AppData\Local\Microsoft\WindowsApps\Spotify.exe"')
-
+            os.system(r'"C:\Users\mille\AppData\Local\Microsoft\WindowsApps\Spotify.exe"')
+        
+        
        
             
 
@@ -122,28 +184,7 @@ def main():
         tk.Button(second_window, text="Run Spotify", command=Run_spotify).pack(pady=3)
         tk.Button(second_window, text="Close PY gamebar module", command=close_second_window).pack(pady=3)
 
-    def duplicate_main_window():
-     duplicate_window = tk.Toplevel()
-     duplicate_window.title("Duplicate Main Window")
-     duplicate_window.geometry("300x600")
-
-     long_text = (
-        "Welcome to the Duplicate Main window of the Python Windows Client!  "
-        "Various programs with various uses can be found on the Client launcher. "
-        "Click [End Session] to close the launcher."
-     )
     
-     label = tk.Label(duplicate_window, text=long_text, wraplength=300)
-     label.pack(pady=10)
-
-     def close_duplicate():
-        duplicate_window.destroy()
-
-     tk.Button(duplicate_window, text="Run Inno setup", command=show_message).pack(pady=5)
-     tk.Button(duplicate_window, text="Run MS visual studio", command=show_new_message).pack(pady=5)
-     tk.Button(duplicate_window, text="Open PY notepad", command=open_writable_box).pack(pady=5)
-     tk.Button(duplicate_window, text="IP Logger", command=open_IPbox_box).pack(pady=5)
-     tk.Button(duplicate_window, text="End Duplicate Session", command=close_duplicate).pack(pady=5)
     
 
 
@@ -185,7 +226,7 @@ def main():
             third_window.destroy()
 
         def Run_msteams():
-            os.system(r'"C:\Users\XXXXX\AppData\Local\Microsoft\WindowsApps\ms-teams.exe msteams:consumer"')
+         subprocess.Popen([r"C:\Users\mille\AppData\Local\Microsoft\WindowsApps\ms-teams.exe", "msteams:consumer"])
 
         tk.Button(root, text="Duplicate Main Window", command=duplicate_main_window).pack(pady=5)
 
