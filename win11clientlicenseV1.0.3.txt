@@ -1,0 +1,41 @@
+Welcome to the Python 3.20 Windows client version 1.0.2 -- 1.1.0 agreement. Only in the early stages, this client does require some manual work to setup. By running this installer, you are agreeing to the following agreement below:   
+
+This code contains nothing harmful or intrusive, or with the desire to do anything undesirable.
+
+No responsibility will be taken for damage done to, or by the installer or he python windows client.
+
+This client will not effect the performance, or your computer in any way.
+
+By ticking the box AGREE you agree to these conditions.
+
+Setup:
+
+Tkinker is REQUIRED
+the following imports must be available:
+
+import tkinter as tk
+from tkinter import messagebox
+import os
+import webbrowser
+import subprocess
+
+
+
+
+the following apps are recommended to make the most out of the client: 
+
+Microsoft teams PERSONAL
+Spotify
+Inno setup
+Minecraft launcher
+Discord
+Onedrive (for desktop)
+MS visual studio code.
+PYTHON 3.9 IS REQUIRED
+
+Setup. 
+
+After running the installer, A file explorer window SHOULD open, showing your STARTUP folder. right click on the python windows client file in this folder, and open in notepad, notepad++ or visual studio (or other python environments). Go through the code and locate all FIVE "XXXX"s. Change these to the name of your desired user path to complete the file paths. Then do crtl+S and close the document. If desired, you can copy and paste this file onto your desktop for manual activation also.
+
+If the Python client crashes, close the terminal to restart.
+
