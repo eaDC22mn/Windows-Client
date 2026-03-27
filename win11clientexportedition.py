@@ -5,7 +5,7 @@ import webbrowser
 import subprocess
 
 def show_new_message():
-    os.system(r'"C:\mille\AppData\Local\Programs\Microsoft VS Code\Code.exe"')
+    os.system(r'"C:\XXXXX\AppData\Local\Programs\Microsoft VS Code\Code.exe"')
 
 def show_message():
     os.system(r'"C:\Program Files (x86)\Inno Setup 6\Compil32.exe"')
@@ -20,7 +20,7 @@ def open_writable_box():
 
     def save_text():
         text_content = text_box.get("1.0", tk.END).strip()
-        save_path = r'C:\Users\mille\OneDrive\Desktop\PY notepad saves\saved_text.txt'
+        save_path = r'C:\Users\XXXXX\OneDrive\Desktop\PY notepad saves\saved_text.txt'
         
         try:
             with open(save_path, 'w') as file:
@@ -43,7 +43,7 @@ def open_IPbox_box():
     text_box.pack(pady=10)
     def save_ip():
         text_content = text_box.get("1.0", tk.END).strip()
-        save_path = r'C:\Users\mille\OneDrive\Desktop\Logged IPs\Logged IP.txt'
+        save_path = r'C:\Users\XXXXX\OneDrive\Desktop\Logged IPs\Logged IP.txt'
       
         try:
             with open(save_path, 'w') as file:
@@ -173,7 +173,7 @@ def main():
             second_window.destroy()
 
         def Run_spotify():
-            os.system(r'"C:\Users\mille\AppData\Local\Microsoft\WindowsApps\Spotify.exe"')
+            os.system(r'"C:\Users\XXXXX\AppData\Local\Microsoft\WindowsApps\Spotify.exe"')
         
         
        
@@ -226,7 +226,7 @@ def main():
             third_window.destroy()
 
         def Run_msteams():
-         subprocess.Popen([r"C:\Users\mille\AppData\Local\Microsoft\WindowsApps\ms-teams.exe", "msteams:consumer"])
+         subprocess.Popen([r"C:\Users\XXXXX\AppData\Local\Microsoft\WindowsApps\ms-teams.exe", "msteams:consumer"])
 
         tk.Button(root, text="Duplicate Main Window", command=duplicate_main_window).pack(pady=5)
 
